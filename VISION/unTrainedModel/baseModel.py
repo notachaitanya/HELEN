@@ -15,7 +15,6 @@ while True:
     ifTrue , frame = video.read()
     result = model(frame)
 
-    # cv.imshow("feed",result[0].plot())
     boxes = result[0].boxes
 
     for box in boxes:
@@ -29,8 +28,6 @@ while True:
 
     if found:
         break
-
-    
 
     if cv.waitKey(20) & 0xFF == ord('d'):
         break
