@@ -18,5 +18,5 @@ for people in images:
 
     for person in people:
         personPath = os.path.join(path,person)
-        
+         
     
