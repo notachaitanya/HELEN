@@ -42,7 +42,9 @@ def listen():
             file.writeframes(b"".join(frames))
 
     finally:
-        stream.stop_stream()
+        if stream.is_active():
+            stream.stop_stream()
+
         stream.close()
         audio.terminate()
 
