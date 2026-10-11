@@ -1,10 +1,12 @@
 from BRAIN.prefrontalCortex import ollamaSend
 from VISION.unTrainedModel import personsIdentifier
+from SOUND import listen
+from SOUND import speak
 
-result = ollamaSend.send("who am i")
-print(result["message"]["content"])
+query = listen.listen()
+result = ollamaSend.send(query)
+answer = result["message"]["content"]
+speak.speak(answer)
 
-number = personsIdentifier()
 
-if number > 1:
-    print(f"two more ppl in room ${number}")
+
