@@ -5,7 +5,7 @@ def send(text):
         model="gemma2:2b",
         messages=[
             {
-                "role" : "nota",
+                "role" : "user",
                 "content" : text
             }
         ]   
