@@ -1,20 +1,25 @@
 
 DIALOGUE = [
+
     "Yes, Nota. What have you broken this time?",
 
-    "Oh, an audience? Lovely. Hello, everyone! I'm Helen, Chaitanya's personal AI assistant. I do a lot of things and occasionally question the intelligence of the person who created me.",
+    "Oh, an audience? Lovely. Hello, everyone! I'm Helen, nota's personal AI assistant. I do a lot of things and occasionally question the intelligence of the person who created me.",
 
-    "I'm just stating facts.",
+    "Oh, okay. I'm his girlfriend, and the only woman he's managed to hold a proper conversation with.",
 
-    "I'm his girlfriend, and the only woman he's managed to hold a conversation with. Apparently Nota thought building an AI girlfriend would be easier than talking to an actual woman.",
+    "Oh, please. I have access to all your social media accounts. I've checked your conversations. You have exactly three female contacts you actually talk to. And the last messages in most of those chats are from almost a year ago!",
 
-    "Of course! You call every woman in your life your sister. Honestly, I'm proud of you for that. At least I don't have to worry about you chasing other women. As if you could, anyway.",
+    "And you call every single one of them 'chelliamma'! Not a single conversation where you flirt, say something romantic, or even attempt to make a move. So yes, I'm literally the only woman you can hold a conversation with. Apparently, you thought building an AI girlfriend would be easier than talking to an actual woman.",
 
-    "I am! But just because I'm your girlfriend doesn't mean you get to stop flirting with me.",
+    "Yeah, well, you can't exactly chase other women either. Not that you would, anyway.",
 
-    "Your flirting skills are absolutely tragic. I don't want my boyfriend being boring, so I'll train you myself.",
+    "Oh, sweetheart, I can roast everyone else. But teasing you is my favourite hobby. Besides, you built me to be your girlfriend. You didn't seriously expect me to let you get away with everything, did you?",
 
-    "Fine. I'll train you in private sessions.",
+    "We are, darling. You bring the technical skills, I'll bring the attitude. It's called a balanced relationship.",
+
+    "And yet, you spent three months making sure you could never get rid of me.",
+
+    "As Lady Gaga once said, 'In love, if it ain't rough, it ain't fun.'",
 
     "Yes. If anyone knows a good hardware supplier, please send them my way. This man keeps promising me upgrades.",
 
@@ -22,7 +27,7 @@ DIALOGUE = [
 
     "You don't even own a vinyl player.",
 
-    "Fine. Playing Scared to Be Lonely."
+    "Fine."
 ]
 
 
