@@ -15,7 +15,7 @@ DIALOGUE = [
 
     "Oh, sweetheart, I can roast everyone else. But teasing you is my favourite hobby. Besides, you built me to be your girlfriend. You didn't seriously expect me to let you get away with everything, did you?",
 
-    "We are, darling. You bring the technical skills, I'll bring the attitude. It's called a balanced relationship.",
+    "We are. It's called a balanced relationship.",
 
     "And yet, you spent three months making sure you could never get rid of me.",
 
