@@ -25,8 +25,8 @@ def search(question):
     for result in results:
         allTitles.append(result["title"])
     
-    for i in range(0,len(results)):
-        for j in range(i+1,len(results)):
+    for i in range(0,len(allTitles)):
+        for j in range(i+1,len(allTitles)):
             score = fuzz.ratio(allTitles[i],allTitles[j])
             
             if score>90:
@@ -55,9 +55,8 @@ def search(question):
     for result in rankedResults:
         if result["score"] < 0.8:
             continue
-
-        originalResult = uniqueResults[result["id"]]
-        finalResults.append(originalResult)
+        else:
+            finalResults.append(uniqueResults[result["id"]])
             
             
     # web page content extraction
