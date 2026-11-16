@@ -1,6 +1,9 @@
 from ddgs import DDGS
 from rapidfuzz import fuzz
 from flashrank import Ranker, RerankRequest
+import requests
+import trafilatura
+from concurrent.futures import ThreadPoolExecutor
 
 
 ranker = Ranker()
@@ -9,6 +12,8 @@ def search(question):
     duplicates = set()
     uniqueResults = []
     passages =[]
+    URLs = []
+    data = []
     finalResults=[]   # contains final results after removing duplicates and removing less ranked results
     results = DDGS().text(
         query=question,
@@ -48,14 +53,32 @@ def search(question):
     )
     rankedResults = ranker.rerank(request)
     for result in rankedResults:
-        if result["score"]<0.8:
+        if result["score"] < 0.8:
             continue
-        else:
-            finalResults.append(result)
+
+        originalResult = uniqueResults[result["id"]]
+        finalResults.append(originalResult)
             
             
     # web page content extraction
+    for result in finalResults:
+        URLs.append(result["href"])
     
+    for url in URLs:
+        response = requests.get(
+            url,
+            timeout=15,
+            headers={"User-Agent": "Mozilla/5.0"}
+        )
+        response.raise_for_status()
+        html = response.text
+
+        content = trafilatura.extract(html)
+        data.append(content)
+
+    return data
+
+
             
     
     

@@ -1,88 +1,42 @@
 
-# import time
-
-# from SOUND import listen
-# from SOUND import speak
-# from SOUND.wakeWordEngine import start_wakeword_detection
-# from BRAIN.choise.choose import choise
+from SOUND import listen
+from SOUND import speak
+from SOUND.wakeWordEngine import start_wakeword_detection
+from BRAIN.choise.choose import choise
 
 
-# motherVariable = True
+motherVariable = True
 
-# try:
+try:
+    speak.initialize_audio()
 
-#     # Initialize audio output before Helen starts listening
-#     speak.initialize_audio()
+    while motherVariable:
 
-#     while motherVariable:
+        heard = start_wakeword_detection()
 
-#         print("\nHelen is waiting for her wake word...")
+        if not heard:
+            continue
 
-#         heard = start_wakeword_detection()
+        while motherVariable:
 
-#         if not heard:
-#             continue
+            query = listen.listen()
 
-#         print("Helen activated!")
+            if not query:
+                continue
 
-#         while motherVariable:
+            if "go to sleep" in query.lower():
+                speak.speak("Going to sleep. Call me when you need me.")
+                break
 
-#             # 1. Listen and transcribe
-#             start = time.perf_counter()
+            answer = choise(query)
 
-#             query = listen.listen()
+            if not answer:
+                continue
 
-#             print(
-#                 "Listening + transcription:",
-#                 round(time.perf_counter() - start, 2),
-#                 "seconds"
-#             )
+            speak.speak(str(answer))
 
-#             if not query:
-#                 print("Helen: I didn't catch that. Try again.")
-#                 continue
-
-#             print("Recognised text:", repr(query))
-
-#             # 2. Check sleep command
-#             if "go to sleep" in query.lower():
-#                 speak.speak(
-#                     "Going to sleep. Call me when you need me."
-#                 )
-#                 break
-
-#             # 3. Select response
-#             start = time.perf_counter()
-
-#             answer = choise(query)
-
-#             print(
-#                 "Response selection:",
-#                 round(time.perf_counter() - start, 2),
-#                 "seconds"
-#             )
-
-#             if not answer:
-#                 print("Helen: I couldn't generate a response.")
-#                 continue
-
-#             print("Helen's answer:", repr(answer))
-
-#             # 4. Speak response
-#             start = time.perf_counter()
-
-#             speak.speak(str(answer))
-
-#             print(
-#                 "Speech playback:",
-#                 round(time.perf_counter() - start, 2),
-#                 "seconds"
-#             )
-
-# finally:
-
-#     # Close audio resources safely
-#     speak.shutdown()
+finally:
+    speak.shutdown()
 
 
 
@@ -145,5 +99,3 @@
 
 #     speak.shutdown()
 # ------------------------------------------------reel main----------------------------------------------------
-from BRAIN.internet import Internet
-Internet.search("who is mark zuck")
