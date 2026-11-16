@@ -24,6 +24,13 @@ try:
             if not query:
                 continue
 
+            # Completely terminate Helen
+            if "helen exit" in query.lower():
+                speak.speak("Shutting down. Goodbye.")
+                motherVariable = False
+                break
+
+            # Put Helen to sleep
             if "go to sleep" in query.lower():
                 speak.speak("Going to sleep. Call me when you need me.")
                 break
@@ -37,6 +44,7 @@ try:
 
 finally:
     speak.shutdown()
+
 
 
 
