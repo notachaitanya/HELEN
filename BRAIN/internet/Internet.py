@@ -53,6 +53,10 @@ def search(question):
         else:
             finalResults.append(result)
             
+            
+    # web page content extraction
+    
+            
     
     
 
