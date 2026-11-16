@@ -85,58 +85,65 @@
 #     speak.shutdown()
 
 
-import time
-
-from SOUND import listen
-from SOUND import speak
-from SOUND.wakeWordEngine import start_wakeword_detection
-from BRAIN.choise.choose import choise
 
 
-motherVariable = True
 
-try:
+# ------------------------------------------------reel main----------------------------------------------------
+# import time
 
-    speak.initialize_audio()
+# from SOUND import listen
+# from SOUND import speak
+# from SOUND.wakeWordEngine import start_wakeword_detection
+# from BRAIN.choise.choose import choise
 
-    while motherVariable:
 
-        print("\nHelen is waiting for her wake word...")
+# motherVariable = True
 
-        heard = start_wakeword_detection()
+# try:
 
-        if not heard:
-            continue
+#     speak.initialize_audio()
 
-        print("Helen activated!")
+#     while motherVariable:
 
-        # Start from the first dialogue every time
-        dialogue_index = 0
+#         print("\nHelen is waiting for her wake word...")
 
-        while motherVariable:
+#         heard = start_wakeword_detection()
 
-            if dialogue_index >= 12:
-                print("Helen's dialogue is complete.")
-                break
+#         if not heard:
+#             continue
 
-            # Wait until you finish speaking
-            listen.listen()
+#         print("Helen activated!")
 
-            # Get Helen's next scripted response
-            answer = choise(dialogue_index)
+#         # Start from the first dialogue every time
+#         dialogue_index = 0
 
-            if answer is None:
-                break
+#         while motherVariable:
 
-            print("\nHelen:", answer)
+#             if dialogue_index >= 12:
+#                 print("Helen's dialogue is complete.")
+#                 break
 
-            # Speak immediately after silence is detected
-            speak.speak(answer)
+#             # Wait until you finish speaking
+#             listen.listen()
 
-            dialogue_index += 1
+#             # Get Helen's next scripted response
+#             answer = choise(dialogue_index)
 
-        print("\nReturning to standby...")
+#             if answer is None:
+#                 break
 
-finally:
+#             print("\nHelen:", answer)
 
-    speak.shutdown()
+#             # Speak immediately after silence is detected
+#             speak.speak(answer)
+
+#             dialogue_index += 1
+
+#         print("\nReturning to standby...")
+
+# finally:
+
+#     speak.shutdown()
+# ------------------------------------------------reel main----------------------------------------------------
+from BRAIN.internet import Internet
+Internet.search("who is mark zuck")
