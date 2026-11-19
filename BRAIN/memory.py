@@ -15,7 +15,7 @@ def memory(query,answer):
             buffer1.clear()
         else:
             activeBuffer = buffer1
-            databuffer.append(buffer2.copy())
+            dataBuffer.append(buffer2.copy())
             buffer2.clear()
 
     activeBuffer.append({
@@ -23,7 +23,7 @@ def memory(query,answer):
         "helen":answer
     })
 
-    if (no process is running then):
+    if (True):
             prompt = f'''
             You are Helen's memory analyser.
             Analyse the given conversations and extract information worth remembering about the user.
@@ -59,5 +59,5 @@ def memory(query,answer):
             the data is {dataBuffer}
             '''
 
-        date = ollamaSend.send(prompt)
+            data = ollamaSend.send(prompt)
     

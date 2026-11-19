@@ -55,7 +55,7 @@ def search(question):
     for result in rankedResults:
         if result["score"] < 0.8:
             continue
-        else:
+        else:  
             finalResults.append(uniqueResults[result["id"]])
             
             
