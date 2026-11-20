@@ -26,6 +26,7 @@ def memory(query,answer):
     if (True):
             prompt = f'''
             You are Helen's memory analyser.
+            dont use any emoji.
             Analyse the given conversations and extract information worth remembering about the user.
             Remember:
             - Personal details and preferences.

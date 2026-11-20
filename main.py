@@ -2,7 +2,7 @@
 from SOUND import listen
 from SOUND import speak
 from SOUND.wakeWordEngine import start_wakeword_detection
-from BRAIN.choise.choose import choise
+from BRAIN import Choise
 
 
 motherVariable = True
@@ -48,7 +48,7 @@ try:
 
             print("SENDING QUERY TO CHOICE...")
 
-            answer = choise(query)
+            answer = Choise.choise(query)
 
             print("CHOICE RETURNED:", repr(answer))
 

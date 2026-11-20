@@ -46,12 +46,14 @@ def choise(question):
     require internet research or personal memory.
 
     OUTPUT RULES:
-    - INTERNET: Return only 1.
-    - MEMORY: Return only 2.
+    - INTERNET: Return only 1 nothing else just plain number 1.
+    - MEMORY: Return only 2 nothing else just plain number 2.
     - CONVERSATION: Directly generate Helen's natural response.
     - GENERAL: Directly answer the question.
 
     Never return 3 or 4.
+    dont use any emoji
+    dont give any /n or * in final answers only give text.
 
     User's message: {question}
     """
@@ -81,6 +83,8 @@ def choise(question):
         6. Answer naturally and conversationally.
 
         Provide only the final answer.
+        dont use any emoji
+        dont give any /n or * in final answers only give text.
         """
 
         answer = ollamaSend.send(InternetPrompt, max_tokens=500).strip()
